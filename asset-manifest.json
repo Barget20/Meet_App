@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Barget20/Meet_App/static/css/main.073c9b0a.css",
+    "main.js": "/Barget20/Meet_App/static/js/main.83b7a15f.js",
+    "static/js/377.dda790c9.chunk.js": "/Barget20/Meet_App/static/js/377.dda790c9.chunk.js",
+    "service-worker.js": "/Barget20/Meet_App/service-worker.js",
+    "static/media/logo.svg": "/Barget20/Meet_App/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/Barget20/Meet_App/index.html",
+    "main.073c9b0a.css.map": "/Barget20/Meet_App/static/css/main.073c9b0a.css.map",
+    "main.83b7a15f.js.map": "/Barget20/Meet_App/static/js/main.83b7a15f.js.map",
+    "377.dda790c9.chunk.js.map": "/Barget20/Meet_App/static/js/377.dda790c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.83b7a15f.js"
+  ]
+}
