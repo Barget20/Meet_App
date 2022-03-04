@@ -12,11 +12,11 @@ const credentials = {
   token_uri: "https://oauth2.googleapis.com/token",
   auth_provider_x509_cert_url: "https://googleapis.com/oauth2/v1/certs",
   //not sure if these uris have been setup properly//
-  redirect_uris: ["https://github.com/Barget20/Meet_App"],
-  javascript_origins: ["https://github.com/Barget20", "http://localhost:3000"],
+  // redirect_uris: ["https://github.com/Barget20/Meet_App"],
+  // javascript_origins: ["https://github.com/Barget20", "http://localhost:3000"],
 };
 
-const { client_secret, client_id, redirect_uris, calendar_id} = credentials;
+const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
 const oAuth2Client = new google.auth.OAuth2(
   client_id,
   client_secret,

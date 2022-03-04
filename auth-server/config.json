@@ -1,6 +1,6 @@
 {
-    "CLIENT_ID": "YOUR_CLIENT_ID",
-    "PROJECT_ID": "YOUR_PROJECT_ID",
-    "CLIENT_SECRET": "YOUR_CLIENT_SECRET",
+    "CLIENT_ID": "329833449843-f9620dntp0emt0b6btl75ebssp6t6vq2.apps.googleusercontent.com",
+    "PROJECT_ID": "meet-app-342820",
+    "CLIENT_SECRET": "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",
     "CALENDAR_ID": "fullstackwebdev@careerfoundry.com"
 }
