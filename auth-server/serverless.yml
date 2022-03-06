@@ -16,16 +16,16 @@ provider:
 
 functions:
   getAuthURL:
-  handler: handler.getAuthURL
-  environments:
+    handler: handler.getAuthURL
+    environments:
     events:
-    - http:
-      path: api/get-auth-url
-      method: get
+      - http:
+        path: api/get-auth-url
+        method: get
   getAccessToken:
     handler: handler.getAccessToken
     events:
-    - http:
+      - http:
         path: api/token/{code}
         method: get
   getCalendarEvents:
