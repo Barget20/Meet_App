@@ -22,7 +22,7 @@
             <h1>OAuth2 Test</h1>
                 <h4><b>Step 1:</b> Get the Auth URL</h4>
                 <p>Click the button below to get your auth url.</p>
-                <button id="getURL">Get OAuth URL</button>
+                <button id="getCode">Get OAuth URL</button>
                 <p id="result"></p>
                 <a id="authURL" href target="_blank">Click to authorise</a>
             <h4>Step 2: Get your code and exchagne for an access token</h4>
@@ -43,14 +43,14 @@
             const getURLElement = document.getElementById("getURL");
             const resultElement = document.getElementById("result");
             const resultLink = document.getElementById("authURL");
-            // const getAuthURL = "YOUR_LAMBDA_GET_AUTH_URL_ENDPOINT";
-            // I'm not sure what this is or how to find it
+            const getAuthURL = "https://rch1vsu2bk.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url";
+           
             getCodeElement.onclick = function () {
                 fetch(getAuthURL)
                 .then(function (response) {
                     return response.json();
                 })
-                .then(function (json) {
+                .then(function(json) {
                     const result = JSON.stringify(json);
                     const { authURL } = JSON.parse(result);
                     resultElement.innerText = result;
@@ -61,10 +61,8 @@
             const codeValue = document.getElementById("code");
             const getAccessToken = document.getElementById("getToken");
             const accessTokenElement = document.getElementById("accessToken");
-            const getToken =
-            //   "YOUR_LAMBDA_GET_AUTH_URL_ENDPOINT";
-            //  I'm not sure what this is or how to find it
-
+            const getToken ="https://rch1vsu2bk.execute-api.us-east-1.amazonaws.com/dev/api/token"
+            
             getaccessToken.onclick = function () {
                 let code = codeValue.value;
 
@@ -84,7 +82,7 @@
             // -- STEP 3
             const getEvents = document.getElementById("getEvents");
             const events = document.getElementById("events");
-            const getCalendarEvents = 
+            const getCalendarEvents = "https://rch1vsu2bk.execute-api.us-east-1.amazonaws.com/dev/api/get-events"
             // "YOUR_LAMBDA_GET_CALENDAR_EVENTS_ENDPOINT";
 
             getEvents.onclick = function () {
