@@ -24,7 +24,7 @@
                 <p>Click the button below to get your auth url.</p>
                 <button id="getCode">Get OAuth URL</button>
                 <p id="result"></p>
-                <a id="authURL" href target="_blank">Click to authorise</a>
+                <a id="authURL" href target="_blank">Click to authorize</a>
             <h4>Step 2: Get your code and exchagne for an access token</h4>
             <p>After you're redirected back to your Meet app on Github, copy the code from the URI.</p>
             <br/>
@@ -39,11 +39,11 @@
 
         </main>
 
-        <script>
-            const getURLElement = document.getElementById("getURL");
+        <script type="text/javascript">
+            const getCodeElement = document.getElementById("getCode");
             const resultElement = document.getElementById("result");
             const resultLink = document.getElementById("authURL");
-            const getAuthURL = "https://rch1vsu2bk.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url";
+            const getAuthURL = "https://rch1vsu2bk.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url"
            
             getCodeElement.onclick = function () {
                 fetch(getAuthURL)
