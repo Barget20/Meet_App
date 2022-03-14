@@ -25,7 +25,7 @@
                 <button id="getCode">Get OAuth URL</button>
                 <p id="result"></p>
                 <a id="authURL" href target="_blank">Click to authorize</a>
-            <h4>Step 2: Get your code and exchagne for an access token</h4>
+            <h4>Step 2: Get your code and exchange for an access token</h4>
             <p>After you're redirected back to your Meet app on Github, copy the code from the URI.</p>
             <br/>
             <label>Code input <input id="code" type="text" value="" />
@@ -47,7 +47,7 @@
            
             getCodeElement.onclick = function () {
                 fetch(getAuthURL)
-                .then(function (response) {
+                .then(function(response) {
                     return response.json();
                 })
                 .then(function(json) {
