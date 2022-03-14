@@ -103,7 +103,7 @@ module.exports.getCalendarEvents = async (event) => {
     redirect_uris[0]
   );
   const access_token = event.pathParameters 
-    ? decodeURIComponent(`$event.pathParameters.access_token}`):"";
+    ? decodeURIComponent(`${event.pathParameters.access_token}`):"";
 
   oAuth2Client.setCredentials({ access_token });
 
