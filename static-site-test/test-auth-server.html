@@ -52,7 +52,7 @@
                 })
                 .then(function(json) {
                     const result = JSON.stringify(json);
-                    const { authURL } = JSON.parse(result);
+                    const { authUrl } = JSON.parse(result);
                     resultElement.innerText = result;
                     resultLink.href = authUrl;
                 });
@@ -63,7 +63,7 @@
             const accessTokenElement = document.getElementById("accessToken");
             const getToken ="https://rch1vsu2bk.execute-api.us-east-1.amazonaws.com/dev/api/token";
             
-            getaccessToken.onclick = function () {
+            getAccessToken.onclick = function () {
                 let code = codeValue.value;
 
                 if (decodeURIComponent(code) === code) {
