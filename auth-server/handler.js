@@ -66,7 +66,7 @@ module.exports.getAccessToken = async (event) => {
     redirect_uris[0]
   );
   const code = event.pathParameters
-    ? decodeURIComponent(`$event.pathParameters.code}`):"";
+    ? decodeURIComponent(`${event.pathParameters.code}`):"";
   
   // oAuth2Client.setCredentials({ access_token });
 
