@@ -67,7 +67,7 @@
                 let code = codeValue.value;
 
                 if (decodeURIComponent(code) === code) {
-                    code = encodeURIComponent(codevalue.value);
+                    code = encodeURIComponent(codeValue.value);
                 }
                 const getTokenRequest = getToken + "/" + code;
                 fetch(getTokenRequest)
