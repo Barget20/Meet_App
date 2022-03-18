@@ -142,5 +142,3 @@ module.exports.getCalendarEvents = async (event) => {
     };
   });
 };
-
-
