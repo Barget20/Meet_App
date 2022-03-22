@@ -12,15 +12,11 @@ describe('<Event /> component', () => {
 
     test('render an event', () => {
         expect(EventWrapper.find('.event')).toHaveLength(1);
-    })
+    });
 
     test('render a location', () => {
         expect(EventWrapper.find('.location')).toHaveLength(1);
-    })
-
-    test('render the summary', () => {
-        expect(EventWrapper.find('.summary')).toHaveLength(1);
-    })
+    });
 
     test('render the date', () => {
         expect(EventWrapper.find('.start-date')).toHaveLength(1);
@@ -30,11 +26,11 @@ describe('<Event /> component', () => {
 
     test('render the show details button', () => {
         expect(EventWrapper.find('.show-details')).toHaveLength(1);
-    })
+    });
 
     test('details are collapsed by default', () => {
         expect(EventWrapper.state('collapsed')).toBe(true);
-    })
+    });
 
     test('open details when show details is clicked', () => {
         EventWrapper.setState({
@@ -48,7 +44,13 @@ describe('<Event /> component', () => {
         EventWrapper.setState({
             collapsed: false
         });
-        EventWrapper.find('.hide-details').simulate('click');
+        EventWrapper.find('.show-details').simulate('click');
         expect(EventWrapper.state('collapsed')).toBe(true);
     });
-})
+
+    test("More details are shown when user clicks details button", () => {
+        EventWrapper.find('.show-details').simulate("click");
+        expect(EventWrapper.find('.event-description')).toHaveLength(1);
+        expect(EventWrapper.find(".show-details").text()).toBe("Hide");
+    });
+});
