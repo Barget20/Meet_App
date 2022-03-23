@@ -4,7 +4,7 @@ class Event extends Component {
     state = { collapsed: true};
 
 render() {
-    const { event } = this.state;
+    const { event } = this.props;
     const { collapsed } = this.state;
     const handleClick = () => {
         this.setState({ collapsed: !this.state.collapsed });
@@ -12,8 +12,7 @@ render() {
 
     return (
         <div className='event'>
-             {/* this was deleted in event.test.js */}
-            {/* <h1 className='summary'>{event.summary}</h1> */}
+            <h1 className='summary'>{event.summary}</h1>
             <h2 className='location'>{event.location}</h2>
             <p className='start-date'>
                 {new Date(event.start.dateTime).toString()}
