@@ -11,6 +11,13 @@ class CitySearch extends Component {
       this.setState({ query: value});
   };
 
+  handleItemClicked = (suggestion) => {
+      this.setState({
+          query: suggestion
+      });
+      this.props.updateEvents(suggestion);
+  }
+
   render() {
       return (
           <div className='CitySearch'>
