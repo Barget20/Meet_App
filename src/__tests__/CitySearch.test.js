@@ -1,10 +1,16 @@
 import React from 'react';
-import { shallow } from "enzyme";
+import { ReactWrapper, shallow } from "enzyme";
 import CitySearch from '../CitySearch';
 import { mockData } from '../mock-data';
 import { extractLocations } from "../api";
 
 describe("<CitySearch /> component", () => {
+    let locations, CitySearchWrapper;
+    beforeAll(() => {
+        locations = extractLocations(mockData);
+        CitySearchWrapper = shallow(<CitySearch locations={locations} updateEvents={() => {}} />);
+    });
+
     test("render text input", () => {
         const CitySearchWrapper = shallow(<CitySearch />);
         expect(CitySearchWrapper.find(".city")).toHaveLength(1);
@@ -46,3 +52,19 @@ describe("<CitySearch /> component", () => {
     );
   }
 });
+
+    test("selecting CitySearch input reveals the suggestions list", () => {
+        CitySearchWrapper.find('.city').simulate('focus');
+        expect(CitySearchWrapper.state('showSuggestions')).toBe(true);
+        expect(CitySearchWrapper.find('.suggestions').prop('style')).not.toEqual({ display: 'none' });
+    });
+
+    test("selecting a suggestion should hid the sugggestion list", () => {
+        CitySearchWrapper.setState({
+            query: 'Berlin',
+            showSuggestions: undefined
+        });
+        CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
+        expect(CitySearchWrapper.state('showSuggestions')).toBe(false);
+        expect(CitySearchWrapper.find('.suggestions').prop('style')).toEqual({ display: 'none' });
+    });
