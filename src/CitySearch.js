@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import NumberOfEvents from './NumberOfEvents';
 
 class CitySearch extends Component {
   state = {
       query: "",
       suggestions: [],
-      showSuggestions: undefined
+      showSuggestions: undefined,
   };
 
   handleInputChange = (event) => {
       const value = event.target.value;
-      this.setState({ query: value});
+      const suggestions = this.props.locations.filter((location) => {
+          return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
+      });
+      this.setState({ query: value, suggestions });
   };
 
   handleItemClicked = (suggestion) => {
