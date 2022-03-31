@@ -80,16 +80,16 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid rgb(204, 106, 106);
+  border: 3px solid rgb(204, 106, 106);
   border-radius: 4px;
   position: relative;
 }
 
 .details-btn {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
-  padding: 5px 8px;
+  right: 7px;
+  bottom: 7px;
+  padding: 7px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
