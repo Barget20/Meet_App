@@ -60,7 +60,7 @@ describe("Filter events by city", () =>
 
     test("Events list of all cities will be shown", async () => 
     {
-        const countEvents = await page.$$.eval('.event', (element) => element.length);
+        const countEvents = await page.$$eval('.event', (element) => element.length);
         expect(countEvents).toBe(2);
     });
 
@@ -75,7 +75,7 @@ describe("Filter events by city", () =>
     {
         await page.reload();
         await page.type(".city", "Berlin");
-        await page.click(".suggestion li");
+        await page.click(".suggestions li");
         const countEvents = await page.$$eval('.event', (element) => element.length);
         expect(countEvents).toBe(1);
     });
