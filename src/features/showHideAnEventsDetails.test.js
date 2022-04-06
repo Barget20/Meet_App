@@ -19,12 +19,12 @@ defineFeature(feature, test => {
         });
         
         when("an event has been selected", () => {
-            expect(AppWrapper.find('.event__detailsButton')).toHaveLength(2);
+            expect(AppWrapper.find('.show-details')).toHaveLength(2);
         });    
 
         then("the event details will be collapsed", () => {
           AppWrapper.update();
-          expect(AppWrapper.find('.event__moreDetails')).toHaveLength(0);
+          expect(AppWrapper.find('.event-description')).toHaveLength(0);
         });
     });
 
@@ -33,18 +33,18 @@ defineFeature(feature, test => {
     test("User can expand an event to see its details", ({ given, when, then }) => 
     {
       let CitySearchWrapper;  
-      given("the user is shown a list of events", () => {
+      given("the user is shown a list of events", async () => {
         AppWrapper = await mount(<App />);
         });
     
         when("the user clicks on a certain event", () => {
           AppWrapper.update();
-          expect(AppWrapper.find('.event__detailsButton')).toHaveLength(2);
-          AppWrapper.find('.event__detailsButton').at(0).simulate('click');
+          expect(AppWrapper.find('.show-details')).toHaveLength(2);
+          AppWrapper.find('.show-details').at(0).simulate('click');
         });
     
         then("the event details will be displayed", () => {
-          expect(AppWrapper.find('.event__moreDetails')).toHaveLength(1);
+          expect(AppWrapper.find('.event-description')).toHaveLength(1);
         });
       });
     
@@ -55,16 +55,16 @@ defineFeature(feature, test => {
         given("the user has clicked on a certain event and the details are showing", async () => {
           AppWrapper = await mount(<App />);
           AppWrapper.update();
-          AppWrapper.find('.event__detailsButton').at(0).simulate('click');
-          expect(AppWrapper.find('.event__moreDetails')).toHaveLength(1);
+          AppWrapper.find('.show-details').at(0).simulate('click');
+          expect(AppWrapper.find('.event-description')).toHaveLength(1);
         });
     
         when('the user clicks the close button', () => {
-          AppWrapper.find('.event__detailsButton').at(0).simulate('click');
+          AppWrapper.find('.show-details').at(0).simulate('click');
         });
     
         then('the event details are hidden', () => {
-          expect(AppWrapper.find('.event_moreDetails')).toHaveLength(0);
+          expect(AppWrapper.find('.event-description')).toHaveLength(0);
         });
     
 
