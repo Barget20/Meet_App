@@ -25,4 +25,6 @@ serviceWorkerRegistration.unregister();
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
+
+//Never figured out how to do this below 
 atatus.notify(new Error('Test Atatus Setup'));
