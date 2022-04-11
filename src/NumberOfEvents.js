@@ -9,8 +9,8 @@ class NumberOfEvents extends Component {
 		
 	handleInputChange = (event) => {
 		const value = event.target.value;
-		
-		if (value <= 0 && value >= 32)
+
+		if (value <= 0 || value >= 32)
 		this.setState({
 			numberOfEvents: value,
 			infoText: "Please enter a number between 1 to 32"
@@ -28,7 +28,7 @@ class NumberOfEvents extends Component {
 			const { numberOfEvents } = this.state;
       return (  
         <div className='NumberOfEvents'>
-			<ErrorAlert text={this.state.errorAlert} />
+			<ErrorAlert text={this.state.infoAlert} />
             <input type="number"
 				onChange={(e) => this.handleInputChange(e)} 
 				value={numberOfEvents}
