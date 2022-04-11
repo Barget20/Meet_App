@@ -29,7 +29,7 @@ class NumberOfEvents extends Component {
 			const { numberOfEvents } = this.state;
       return (  
         <div className='NumberOfEvents'>
-			<ErrorAlert text={this.state.infoAlert} />
+			<ErrorAlert text={this.state.infoText} />
             <input type="number"
 				onChange={(e) => this.handleInputChange(e)} 
 				value={numberOfEvents}
