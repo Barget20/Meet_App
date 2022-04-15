@@ -6,12 +6,7 @@ import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
 import './nprogress.css';
 import WelcomeScreen from './WelcomeScreen';
-
-state = {
-  events: [],
-  locations: [],
-  showWelcomeScreen: undefined
-}
+import { ErrorAlert } from './Alert';
 
 class App extends Component {
   state = {
@@ -19,12 +14,14 @@ class App extends Component {
     locations: [],
     numberOfEvents: 32,
     currentLocation: "all",
+    showWelcomeScreen: undefined,
+    offlineText: "",
   };
 
   componentDidMount() {
     this.mounted = true;
     const accessToken = localStorage.getItem('access_token');
-    const isTokenValid = (await checkToken(accessToken)).error ? false: true;
+    const isTokenValid = (checkToken(accessToken)).error ? false: true;
     const searchParams = new URLSearchParams(window.location.search);
     const code = searchParams.get('code');
     this.setState({ showWelcomeScreen: !(code || isTokenValid) });
@@ -33,6 +30,15 @@ class App extends Component {
         if (this.mounted) {
           this.setState({ events, locations: extractLocations(events) });
         }
+      });
+    }
+    if (!navigator.onLine) {
+      this.setState({
+        offlineText: "You are not connected to the Internet",
+      });
+    } else {
+      this.setState({
+        offlineText: "",
       });
     }
   }
@@ -44,13 +50,12 @@ class App extends Component {
   updateEvents = (location, eventCount) => {
       const { currentLocation, numberOfEvents } = this.state;
       if (location) {
-      getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
-      events: 
-      events.filter((event) => 
-      event.location === location);
-      const filteredEvents = locationEvents.slice(0, numberOfEvents);
-        this.setState({
+        getEvents().then((events) => {
+          const locationEvents = (location === 'all') ? events: 
+          events.filter((event) => 
+          event.location === location);
+          const filteredEvents = locationEvents.slice(0, numberOfEvents);
+          this.setState({
           events: filteredEvents,
           currentLocation: location,
         });
@@ -77,11 +82,10 @@ class App extends Component {
         {/* other components such as CitySearch, EventList, ...etc.\ */}
         <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
         getAccessToken={() => {getAccessToken() }} />
-
-        {/* I believe these aren't needed anymore */}
-        {/* <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+        <ErrorAlert text={this.state.offlineText} />
+        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
-        <EventList events={this.state.events} /> */}
+        <EventList events={this.state.events} />
       </div>
     );
   }
