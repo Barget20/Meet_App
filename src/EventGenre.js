@@ -28,7 +28,7 @@ const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
         cy={200}
         labelLine={false}
         outerRadius={80}
-        label>
+        label={({ name, percent}) => `${name}${(percent*100).toFixed(0)}%`}>
           {
           data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index]}/>
