@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 
@@ -18,7 +18,7 @@ const EventGenre = ({ events }) => {
     setData(data); }, [events]);
 
 
-// const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
   return (
     <ResponsiveContainer height={400}>
