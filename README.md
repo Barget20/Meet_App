@@ -8,3 +8,10 @@
   <p> In this project we used TDD, a Google Calendar API, and is a step away from being verified. The key features of this app is to be able to filter events by city,
     show/hide event details, specifiy the number of events, and be able to view a chart showing the number of upcoming events by city. The app is also allowed to be used when offline. 
     It has also been converted into a PWA and can be added as a shortcut to the home screen. </p>
+    
+<h2> Images: </h2>
+
+<p> ![Meet_App1_Screenshot](https://user-images.githubusercontent.com/89669426/174528531-92508ba7-d6d2-45fb-96c2-125fe908799b.png)
+
+![Meet_App2_Screenshot](https://user-images.githubusercontent.com/89669426/174528547-170d689e-27b4-44dd-8db2-719df0f25d94.png)
+</p>
