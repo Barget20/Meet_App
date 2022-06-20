@@ -11,10 +11,7 @@
     
 <h2> Images: </h2>
 
-<p> 
 ![Meet_App1_Screenshot](https://user-images.githubusercontent.com/89669426/174528531-92508ba7-d6d2-45fb-96c2-125fe908799b.png) 
-</p>
 
-<p>
 ![Meet_App2_Screenshot](https://user-images.githubusercontent.com/89669426/174528547-170d689e-27b4-44dd-8db2-719df0f25d94.png)
-</p>
+
